@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   
   <style>
-    /* 基础样式重置 */
+    /* 基础样式 */
     * {
       margin: 0;
       padding: 0;
@@ -26,15 +26,15 @@
       background: #fff;
     }
     
-    /* 顶部导航栏 - 简约白色 */
+    /* 顶部导航栏 - 参考 OpenClaw 风格 */
     .app-nav {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      height: 60px;
+      height: 64px;
       background: #fff;
-      border-bottom: 1px solid #e8e8e8;
+      border-bottom: 1px solid #e5e7eb;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -45,35 +45,97 @@
     .app-nav-left {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 24px;
     }
     
+    /* Logo */
     .app-nav-logo {
-      font-size: 20px;
-      font-weight: 600;
-      color: #10b981;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       text-decoration: none;
-      letter-spacing: 0.5px;
     }
     
+    .app-nav-logo-icon {
+      width: 32px;
+      height: 32px;
+      background: #10b981;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    
+    .app-nav-logo-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: #111;
+    }
+    
+    /* 语言切换 */
     .app-nav-lang {
-      padding: 4px 12px;
-      border: 1px solid #d9d9d9;
-      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
       background: #fff;
       cursor: pointer;
       font-size: 14px;
-      color: #666;
+      color: #374151;
     }
     
+    .app-nav-lang:hover {
+      border-color: #d1d5db;
+    }
+    
+    /* 中间搜索 */
+    .app-nav-center {
+      flex: 1;
+      max-width: 400px;
+      margin: 0 24px;
+    }
+    
+    .app-nav-search {
+      width: 100%;
+      padding: 8px 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #f9fafb;
+      font-size: 14px;
+      color: #6b7280;
+    }
+    
+    .app-nav-search:focus {
+      outline: none;
+      border-color: #10b981;
+      background: #fff;
+    }
+    
+    /* 右侧链接 */
     .app-nav-right {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
     }
     
     .app-nav-link {
-      padding: 8px 20px;
+      font-size: 14px;
+      color: #6b7280;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .app-nav-link:hover {
+      color: #111;
+    }
+    
+    .app-nav-btn {
+      padding: 8px 16px;
       background: #10b981;
       color: #fff;
       text-decoration: none;
@@ -83,17 +145,17 @@
       transition: background 0.2s;
     }
     
-    .app-nav-link:hover {
+    .app-nav-btn:hover {
       background: #059669;
     }
     
-    /* 侧边栏 - 简约风格 */
+    /* 侧边栏 */
     .sidebar {
-      top: 60px !important;
+      top: 64px !important;
       width: 280px;
-      background: #fafafa;
-      border-right: 1px solid #e8e8e8;
-      padding: 20px 0;
+      background: #fff;
+      border-right: 1px solid #e5e7eb;
+      padding: 16px 0;
     }
     
     .sidebar-nav {
@@ -108,63 +170,65 @@
       margin: 0;
     }
     
-    .sidebar-nav a {
+    /* 一级菜单 */
+    .sidebar-nav > ul > li > a {
       display: block;
-      padding: 10px 24px;
-      color: #555;
+      padding: 10px 20px;
+      color: #374151;
       text-decoration: none;
       font-size: 14px;
+      font-weight: 500;
       border-left: 3px solid transparent;
       transition: all 0.2s;
     }
     
-    .sidebar-nav a:hover {
-      color: #10b981;
-      background: #f0fdf4;
-    }
-    
-    .sidebar-nav a.active {
+    .sidebar-nav > ul > li > a:hover,
+    .sidebar-nav > ul > li > a.active {
       color: #10b981;
       background: #f0fdf4;
       border-left-color: #10b981;
-      font-weight: 500;
-    }
-    
-    /* 一级菜单 */
-    .sidebar-nav > ul > li > a {
-      font-weight: 600;
-      color: #333;
-      font-size: 15px;
-      padding: 12px 24px;
     }
     
     /* 二级菜单 */
-    .sidebar-nav > ul > li > ul {
-      padding: 4px 0;
+    .sidebar-nav > ul > li > ul > li > a {
+      display: block;
+      padding: 8px 20px 8px 36px;
+      color: #6b7280;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      border-left: 3px solid transparent;
+      transition: all 0.2s;
     }
     
-    .sidebar-nav > ul > li > ul > li > a {
-      padding-left: 40px;
-      font-size: 14px;
-      color: #666;
+    .sidebar-nav > ul > li > ul > li > a:hover,
+    .sidebar-nav > ul > li > ul > li > a.active {
+      color: #10b981;
+      background: #f0fdf4;
+      border-left-color: #10b981;
+    }
+    
+    /* 隐藏三级菜单 */
+    .sidebar-nav > ul > li > ul > li > ul {
+      display: none !important;
     }
     
     /* 主内容区 */
     .content {
-      top: 60px !important;
+      top: 64px !important;
       left: 280px !important;
       padding: 40px 48px;
       max-width: 900px;
     }
     
-    /* Markdown 内容样式 */
+    /* Markdown 样式 */
     .markdown-section h1 {
       font-size: 32px;
       font-weight: 600;
       color: #111;
       margin-bottom: 24px;
       padding-bottom: 16px;
-      border-bottom: 1px solid #e8e8e8;
+      border-bottom: 1px solid #e5e7eb;
     }
     
     .markdown-section h2 {
@@ -173,7 +237,7 @@
       color: #111;
       margin: 40px 0 16px;
       padding-bottom: 8px;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid #f3f4f6;
     }
     
     .markdown-section h3 {
@@ -185,7 +249,7 @@
     
     .markdown-section p {
       margin: 12px 0;
-      color: #555;
+      color: #4b5563;
       line-height: 1.8;
     }
     
@@ -198,45 +262,6 @@
       text-decoration: underline;
     }
     
-    .markdown-section code {
-      background: #f6f8fa;
-      padding: 2px 6px;
-      border-radius: 3px;
-      font-family: "SF Mono", Monaco, Inconsolata, "Fira Code", monospace;
-      font-size: 13px;
-      color: #333;
-    }
-    
-    .markdown-section pre {
-      background: #f6f8fa;
-      padding: 16px;
-      border-radius: 8px;
-      overflow-x: auto;
-      margin: 16px 0;
-    }
-    
-    .markdown-section pre code {
-      background: none;
-      padding: 0;
-    }
-    
-    .markdown-section blockquote {
-      border-left: 4px solid #10b981;
-      padding-left: 16px;
-      margin: 16px 0;
-      color: #666;
-    }
-    
-    .markdown-section ul, .markdown-section ol {
-      margin: 12px 0;
-      padding-left: 24px;
-    }
-    
-    .markdown-section li {
-      margin: 6px 0;
-      color: #555;
-    }
-    
     .markdown-section table {
       width: 100%;
       border-collapse: collapse;
@@ -246,16 +271,16 @@
     .markdown-section th, .markdown-section td {
       padding: 12px 16px;
       text-align: left;
-      border-bottom: 1px solid #e8e8e8;
+      border-bottom: 1px solid #e5e7eb;
     }
     
     .markdown-section th {
       font-weight: 600;
-      color: #333;
-      background: #fafafa;
+      color: #111;
+      background: #f9fafb;
     }
     
-    /* 首页特殊样式 */
+    /* 首页样式 */
     .home-title {
       font-size: 48px;
       font-weight: 700;
@@ -267,13 +292,13 @@
     .home-subtitle {
       font-size: 24px;
       font-weight: 400;
-      color: #666;
+      color: #6b7280;
       margin-bottom: 24px;
     }
     
     .home-tagline {
       font-size: 16px;
-      color: #888;
+      color: #9ca3af;
       margin-bottom: 40px;
       max-width: 600px;
     }
@@ -284,7 +309,7 @@
       background: #10b981;
       color: #fff;
       text-decoration: none;
-      border-radius: 6px;
+      border-radius: 8px;
       font-size: 15px;
       font-weight: 500;
       transition: background 0.2s;
@@ -300,7 +325,7 @@
       gap: 32px;
       margin-top: 60px;
       padding-top: 40px;
-      border-top: 1px solid #e8e8e8;
+      border-top: 1px solid #e5e7eb;
     }
     
     .home-feature {
@@ -321,7 +346,7 @@
     
     .home-feature p {
       font-size: 14px;
-      color: #666;
+      color: #6b7280;
       line-height: 1.6;
     }
   </style>
@@ -330,14 +355,19 @@
   <!-- 顶部导航 -->
   <nav class="app-nav">
     <div class="app-nav-left">
-      <a href="#/" class="app-nav-logo">LITTA</a>
+      <a href="#/" class="app-nav-logo">
+        <div class="app-nav-logo-icon">L</div>
+        <span class="app-nav-logo-text">LITTA</span>
+      </a>
       <select class="app-nav-lang" onchange="changeLang(this.value)">
-        <option value="zh">中文</option>
+        <option value="zh">🌏 简体中文</option>
         <option value="en">English</option>
       </select>
     </div>
+    
     <div class="app-nav-right">
-      <a href="https://b.litta.cn" target="_blank" class="app-nav-link">商家后台</a>
+      <a href="https://github.com/litta" class="app-nav-link" target="_blank">GitHub</a>
+      <a href="https://b.litta.cn" class="app-nav-btn" target="_blank">商家后台</a>
     </div>
   </nav>
 
@@ -348,7 +378,7 @@
       name: 'LITTA',
       repo: '',
       loadSidebar: true,
-      subMaxLevel: 2,
+      subMaxLevel: 1,
       auto2top: true,
       homepage: 'home.md',
       basePath: './',
@@ -358,9 +388,9 @@
       search: {
         maxAge: 86400000,
         paths: 'auto',
-        placeholder: '搜索',
+        placeholder: '搜索...',
         noData: '找不到结果',
-        depth: 6
+        depth: 2
       }
     };
 
