@@ -2,67 +2,89 @@
 layout: home
 
 hero:
-  name: LITTA 商家中心
+  name: LITTA
   text: 主动健康服务操作系统
-  tagline: 连接服务供给与保险支付，让「运动换保障」成为现实
+  tagline: 连接健康服务供给与保险支付，让「运动换保障」成为现实
   actions:
     - theme: brand
-      text: 快速开始
-      link: /guide/getting-started
+      text: 了解 LITTA
+      link: /about
     - theme: alt
-      text: 查看文档
-      link: /guide/
-    - theme: alt
-      text: API 文档
-      link: /api/
+      text: 服务配置
+      link: /service/
 
 features:
-  - icon: 🚀
-    title: 快速入驻
-    details: 5 分钟完成商家认证，快速开启数字化经营，支持个人教练和企业门店
-  - icon: 🏪
-    title: 门店管理
-    details: 一站式门店运营系统，课程排期、会员管理、预约核销，让经营更高效
-  - icon: 👥
-    title: 会员运营
-    details: 全生命周期会员管理，从获客到留存，数据驱动精细化运营
   - icon: 🤖
-    title: AI 助手
-    details: LITTA POWER 智能辅助，服务策略生成、履约提醒、内容创作
+    title: AI 驱动
+    details: LITTA POWER 智能服务交付系统，让健康服务可配置、可履约、可核验
+  - icon: 🏥
+    title: 保险融合
+    details: 与平安、太保等头部保险公司合作，构建「运动换保障」闭环
+  - icon: 🏪
+    title: 商家赋能
+    details: 为健身、康复、营养商家提供一站式数字化经营解决方案
+  - icon: 📊
+    title: 数据闭环
+    details: 服务过程 100% 数字化，行为数据可核验、可审计
 ---
 
-## 开始使用
+## 一句话定位
 
-<div class="vp-doc" style="margin-top: 2rem;">
+LITTA 是以 AI 为底座的主动健康服务操作系统 —— 连接健康服务供给与保险支付，让「运动换保障」成为现实。
 
-### 5 分钟快速上手
+## 核心商业模式
 
-1. [商家入驻](/guide/onboarding) - 完成实名认证，开启经营之旅
-2. [创建门店](/guide/store-setup) - 配置门店信息，上传照片
-3. [发布服务](/guide/service-publish) - 上架会员卡、私教课、团课
-4. [开始经营](/guide/operations) - 接收预约、服务会员、查看数据
+### S2B2C + 保险融合
 
-### 核心功能
+我们构建了 S-A-G-B-b-C 六层服务网络，实现供给侧与保险侧的闭环：
 
-- [门店管理](/guide/store-management) - 门店信息、营业时间、设施配置
-- [服务管理](/guide/service-management) - 会员卡、私教课、团课配置
-- [会员系统](/guide/member-system) - 会员档案、标签、跟进记录
-- [预约核销](/guide/booking) - 预约管理、扫码核销、退改处理
-- [数据报表](/guide/analytics) - 经营数据、业绩分析、趋势洞察
+```
+保险为健康服务付费
+    ↓
+用户运动数据换保费折扣/权益
+    ↓
+健康改善降低赔付
+    ↓
+再投入激励形成正向循环
+```
 
-### 开发者资源
+**双向循环逻辑：**
+- **供给侧**是装机入口：先让有服务能力的商家把生意跑起来
+- **保险侧**是规模入口：通过平安、太保等头部保险公司，将服务嵌入保单权益
+- **交付由本地服务者完成**：不自营开店、不自养教练
 
-- [API 概览](/api/) - 接口说明、认证方式、错误码
-- [Webhooks](/api/webhooks) - 实时事件通知
-- [SDK 下载](/api/sdk) - 多语言 SDK 快速接入
+## 核心产品：LITTA POWER
 
-</div>
+我们为商家和服务者提供四大 AI 能力模块：
+
+| 模块 | 能力 | 典型场景 |
+|------|------|---------|
+| **策略侧** | 辅助生成与优化服务策略 | 新会员进场，推荐服务方案 |
+| **履约侧** | 基于证据链做提示、纠偏与建议 | 关键节点提示干预事项 |
+| **表达侧** | 辅助生成成果表达与经营素材 | 把阶段成果输出为可传播素材 |
+| **运营侧** | 辅助任务化运营与知识支持 | 减少非核心消耗，节奏化经营 |
+
+## 我们的差异化
+
+- **AI Native** - 从第一天起就以 AI 为核心构建系统
+- **保险融合** - 独特的「运动换保障」商业模式
+- **服务策略化** - 让健康服务从「固定功能」变为「可配置策略」
+- **数据闭环** - 服务过程 100% 数字化，支撑保险深度合作
+
+## 合作联系
+
+如果您是：
+- **保险公司**：希望将健康服务嵌入保单权益
+- **健身/康复机构**：希望提升服务效率和标准化能力
+- **企业客户**：希望为员工提供健康管理解决方案
+
+欢迎与我们联系，共同探索「运动换保障」的无限可能。
+
+**LITTA** —— 推动健康资源平权，让每个人享有美好健康生活
 
 <style>
 :root {
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #10b981 30%, #3b82f6);
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #10b981 50%, #3b82f6 50%);
-  --vp-home-hero-image-filter: blur(44px);
 }
 </style>
