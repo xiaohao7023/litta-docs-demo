@@ -2,14 +2,17 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'LITTA Docs',
-  description: 'LITTA 文档中心 - 主动健康服务操作系统',
+  title: 'LITTA 商家中心',
+  description: 'LITTA 商家端文档中心 - 主动健康服务操作系统',
   
   // 基础配置
   base: '/litta-docs-demo/',
   
   // 清理 URL
   cleanUrls: true,
+  
+  // 最后更新时间
+  lastUpdated: true,
   
   // 主题配置
   themeConfig: {
@@ -18,55 +21,46 @@ export default defineConfig({
     
     // 导航栏
     nav: [
-      { text: '开始', link: '/start/getting-started' },
+      { text: '首页', link: '/' },
       { 
-        text: 'Models', 
+        text: '商家指南', 
         items: [
-          { text: 'Providers', link: '/models/providers' },
-          { text: '配置', link: '/models/config' }
+          { text: '快速开始', link: '/merchant/getting-started' },
+          { text: '入驻指南', link: '/merchant/register' },
+          { text: '门店管理', link: '/merchant/store-management' }
         ]
       },
       { 
-        text: 'Skills',
+        text: '开发文档',
         items: [
-          { text: '概述', link: '/skills/' },
-          { text: '使用指南', link: '/skills/usage' }
+          { text: 'API 概览', link: '/api/' },
+          { text: 'Webhooks', link: '/api/webhooks' },
+          { text: 'SDK', link: '/api/sdk' }
         ]
       }
     ],
     
     // 侧边栏
     sidebar: {
-      '/start/': [
+      '/merchant/': [
         {
-          text: '开始',
+          text: '商家指南',
           collapsed: false,
           items: [
-            { text: '快速开始', link: '/start/getting-started' },
-            { text: '安装', link: '/start/installation' },
-            { text: '配置', link: '/start/configuration' }
+            { text: '快速开始', link: '/merchant/getting-started' },
+            { text: '入驻指南', link: '/merchant/register' },
+            { text: '门店管理', link: '/merchant/store-management' }
           ]
         }
       ],
-      '/models/': [
+      '/api/': [
         {
-          text: 'Models',
+          text: '开发文档',
           collapsed: false,
           items: [
-            { text: 'Providers', link: '/models/providers' },
-            { text: '配置', link: '/models/config' },
-            { text: '模型列表', link: '/models/list' }
-          ]
-        }
-      ],
-      '/skills/': [
-        {
-          text: 'Skills',
-          collapsed: false,
-          items: [
-            { text: '概述', link: '/skills/' },
-            { text: '使用指南', link: '/skills/usage' },
-            { text: '开发指南', link: '/skills/development' }
+            { text: 'API 概览', link: '/api/' },
+            { text: 'Webhooks', link: '/api/webhooks' },
+            { text: 'SDK', link: '/api/sdk' }
           ]
         }
       ]
@@ -90,7 +84,7 @@ export default defineConfig({
     
     // 编辑链接
     editLink: {
-      pattern: 'https://github.com/litta/litta-docs-demo/edit/main/docs/:path',
+      pattern: 'https://github.com/xiaohao7023/litta-docs-demo/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页'
     }
   },
