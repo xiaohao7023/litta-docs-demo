@@ -40,7 +40,7 @@ npm install
 npm run docs:dev
 ```
 
-打开浏览器访问 http://localhost:5173
+打开浏览器访问 `http://localhost:5173`
 
 ### 4. 构建
 

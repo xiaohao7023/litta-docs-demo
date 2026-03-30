@@ -50,7 +50,7 @@ npm run docs:dev
   ➜  press h + enter to show help
 ```
 
-打开浏览器访问 http://localhost:5173 即可预览文档。
+打开浏览器访问 `http://localhost:5173` 即可预览文档。
 
 ## 常用命令
 
