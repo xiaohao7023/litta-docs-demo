@@ -1,5 +1,9 @@
 - [关于 LITTA](/about)
+
 - 服务配置
   - [问卷配置](/service/questionnaire)
   - [首页配置](/service/homepage)
   - [训练计划配置](/service/training-plan)
+
+- 训练计划
+  - [课程编辑器](/training/course-editor)
