@@ -11,7 +11,10 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   
   <style>
-    /* 基础样式 */
+    :root {
+      --theme-color: #1890FF;
+    }
+    
     * {
       margin: 0;
       padding: 0;
@@ -26,7 +29,7 @@
       background: #fff;
     }
     
-    /* 顶部导航栏 - 参考 OpenClaw 风格 */
+    /* 顶部导航栏 */
     .app-nav {
       position: fixed;
       top: 0;
@@ -48,7 +51,6 @@
       gap: 24px;
     }
     
-    /* Logo */
     .app-nav-logo {
       display: flex;
       align-items: center;
@@ -59,7 +61,7 @@
     .app-nav-logo-icon {
       width: 32px;
       height: 32px;
-      background: #10b981;
+      background: #1890FF;
       border-radius: 8px;
       display: flex;
       align-items: center;
@@ -75,7 +77,6 @@
       color: #111;
     }
     
-    /* 语言切换 */
     .app-nav-lang {
       display: flex;
       align-items: center;
@@ -93,30 +94,6 @@
       border-color: #d1d5db;
     }
     
-    /* 中间搜索 */
-    .app-nav-center {
-      flex: 1;
-      max-width: 400px;
-      margin: 0 24px;
-    }
-    
-    .app-nav-search {
-      width: 100%;
-      padding: 8px 16px;
-      border: 1px solid #e5e7eb;
-      border-radius: 8px;
-      background: #f9fafb;
-      font-size: 14px;
-      color: #6b7280;
-    }
-    
-    .app-nav-search:focus {
-      outline: none;
-      border-color: #10b981;
-      background: #fff;
-    }
-    
-    /* 右侧链接 */
     .app-nav-right {
       display: flex;
       align-items: center;
@@ -136,7 +113,7 @@
     
     .app-nav-btn {
       padding: 8px 16px;
-      background: #10b981;
+      background: #1890FF;
       color: #fff;
       text-decoration: none;
       border-radius: 6px;
@@ -146,7 +123,7 @@
     }
     
     .app-nav-btn:hover {
-      background: #059669;
+      background: #096dd9;
     }
     
     /* 侧边栏 */
@@ -170,7 +147,6 @@
       margin: 0;
     }
     
-    /* 一级菜单 */
     .sidebar-nav > ul > li > a {
       display: block;
       padding: 10px 20px;
@@ -184,12 +160,11 @@
     
     .sidebar-nav > ul > li > a:hover,
     .sidebar-nav > ul > li > a.active {
-      color: #10b981;
-      background: #f0fdf4;
-      border-left-color: #10b981;
+      color: #1890FF;
+      background: #e6f7ff;
+      border-left-color: #1890FF;
     }
     
-    /* 二级菜单 */
     .sidebar-nav > ul > li > ul > li > a {
       display: block;
       padding: 8px 20px 8px 36px;
@@ -203,13 +178,19 @@
     
     .sidebar-nav > ul > li > ul > li > a:hover,
     .sidebar-nav > ul > li > ul > li > a.active {
-      color: #10b981;
-      background: #f0fdf4;
-      border-left-color: #10b981;
+      color: #1890FF;
+      background: #e6f7ff;
+      border-left-color: #1890FF;
     }
     
-    /* 隐藏三级菜单 */
     .sidebar-nav > ul > li > ul > li > ul {
+      display: none !important;
+    }
+    
+    /* 隐藏 Docsify 默认的搜索和标题 */
+    .sidebar-nav > h1,
+    .sidebar-nav > .app-name,
+    .sidebar > .search {
       display: none !important;
     }
     
@@ -254,7 +235,7 @@
     }
     
     .markdown-section a {
-      color: #10b981;
+      color: #1890FF;
       text-decoration: none;
     }
     
@@ -280,65 +261,39 @@
       background: #f9fafb;
     }
     
-    /* 首页样式 */
-    .home-title {
-      font-size: 48px;
-      font-weight: 700;
-      color: #111;
-      margin-bottom: 16px;
-      letter-spacing: -0.5px;
+    /* 首页样式 - 简化 */
+    .home-content {
+      max-width: 800px;
     }
     
     .home-subtitle {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 400;
       color: #6b7280;
-      margin-bottom: 24px;
-    }
-    
-    .home-tagline {
-      font-size: 16px;
-      color: #9ca3af;
-      margin-bottom: 40px;
-      max-width: 600px;
-    }
-    
-    .home-btn {
-      display: inline-block;
-      padding: 12px 28px;
-      background: #10b981;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 15px;
-      font-weight: 500;
-      transition: background 0.2s;
-    }
-    
-    .home-btn:hover {
-      background: #059669;
+      margin-bottom: 32px;
+      line-height: 1.6;
     }
     
     .home-features {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 32px;
-      margin-top: 60px;
-      padding-top: 40px;
+      margin-top: 48px;
+      padding-top: 32px;
       border-top: 1px solid #e5e7eb;
     }
     
     .home-feature {
-      padding: 24px 0;
+      padding: 16px 0;
     }
     
     .home-feature-icon {
-      font-size: 32px;
+      font-size: 28px;
       margin-bottom: 12px;
     }
     
     .home-feature h3 {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
       color: #111;
       margin-bottom: 8px;
@@ -352,7 +307,6 @@
   </style>
 </head>
 <body>
-  <!-- 顶部导航 -->
   <nav class="app-nav">
     <div class="app-nav-left">
       <a href="#/" class="app-nav-logo">
@@ -375,7 +329,7 @@
 
   <script>
     window.$docsify = {
-      name: 'LITTA',
+      name: '',
       repo: '',
       loadSidebar: true,
       subMaxLevel: 1,
@@ -384,13 +338,6 @@
       basePath: './',
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
-      },
-      search: {
-        maxAge: 86400000,
-        paths: 'auto',
-        placeholder: '搜索...',
-        noData: '找不到结果',
-        depth: 2
       }
     };
 
@@ -404,6 +351,5 @@
   </script>
 
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
 </body>
 </html>
