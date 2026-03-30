@@ -1,11 +1,15 @@
 import { defineConfig } from 'vitepress'
 
+// https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'LITTA Docs',
   description: 'LITTA 文档中心 - 主动健康服务操作系统',
   
   // 基础配置
   base: '/litta-docs-demo/',
+  
+  // 清理 URL
+  cleanUrls: true,
   
   // 主题配置
   themeConfig: {
