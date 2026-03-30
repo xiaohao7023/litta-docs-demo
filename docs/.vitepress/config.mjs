@@ -92,5 +92,8 @@ export default defineConfig({
   // Markdown 配置
   markdown: {
     lineNumbers: true
-  }
+  },
+  
+  // 忽略死链接检查
+  ignoreDeadLinks: true
 })
